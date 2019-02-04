@@ -8,11 +8,11 @@ FROM node:11.0.0
 
 MAINTAINER Samuel Hornsey <hornseysam498@gmail.com>
 
-# Pre install webpack, webpack cli and claudia js (AWS deployment)
+# Pre install webpack, webpack cli and node-sass
 RUN npm install --global webpack \
     webpack-cli \
-    claudia
-
+    --unsafe-perm node-sass
+    
 # Install AWS cli
 RUN apt-get update && \
     apt-get install -y \
