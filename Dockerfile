@@ -8,6 +8,8 @@ FROM node:11.0.0
 
 MAINTAINER Samuel Hornsey <hornseysam498@gmail.com>
 
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+
 # Pre install webpack, webpack cli and node-sass
 RUN npm install --global webpack \
     webpack-cli \
@@ -22,5 +24,8 @@ RUN apt-get update && \
         python-setuptools \
         groff \
         less \
+        git \
+        git-lfs \
+        jq \
     && pip install --upgrade awscli \
     && apt-get clean
